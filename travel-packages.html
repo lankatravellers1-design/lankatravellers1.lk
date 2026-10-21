@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f2">
+  <meta name="description" content="Discover Sri Lanka with Lanka Travellers. Find your kind of island adventure, from misty tea country to golden beaches.">
+  <title>Travel Packages - Lanka Travellers</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body class="packages-page">
+  <div class="page-wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Lanka Travellers home">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span class="brand-name">Lanka Travellers<span>Made of island stories</span></span>
+      </a>
+      <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="travel-packages.html" aria-current="page">Travel packages</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+        <button class="account-trigger" type="button" data-auth-panel="login">Log in</button>
+      </nav>
+      <a class="header-cta" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
+    </header>
+    <dialog class="auth-dialog" id="auth-dialog" aria-labelledby="auth-dialog-title">
+      <div class="auth-dialog-header">
+        <div>
+          <p class="section-kicker">Your island journey</p>
+          <h2 id="auth-dialog-title">Welcome back.</h2>
+        </div>
+        <button class="auth-close" type="button" aria-label="Close account panel">×</button>
+      </div>
+      <div class="auth-tabs" role="tablist" aria-label="Account options">
+        <button class="auth-tab" id="login-tab" type="button" role="tab" aria-controls="login-panel" aria-selected="true">Log in</button>
+        <button class="auth-tab" id="register-tab" type="button" role="tab" aria-controls="register-panel" aria-selected="false" tabindex="-1">Create account</button>
+      </div>
+      <section id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+        <form class="auth-form" id="login-form">
+          <h3>Good to see you again.</h3>
+          <label for="login-email">Email address</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required>
+          <button class="search-button" type="submit">Log in <span aria-hidden="true">→</span></button>
+          <button class="auth-switch" type="button" data-auth-panel="register">New to Lanka Travellers? Create an account</button>
+        </form>
+      </section>
+      <section id="register-panel" role="tabpanel" aria-labelledby="register-tab" hidden>
+        <form class="auth-form" id="register-form">
+          <h3>Let’s get you travelling.</h3>
+          <label for="register-name">Your name</label>
+          <input id="register-name" name="name" type="text" autocomplete="name" placeholder="How should we address you?" required>
+          <label for="register-email">Email address</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="register-password">Create a password</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required>
+          <label for="register-password-confirmation">Confirm password</label>
+          <input id="register-password-confirmation" name="passwordConfirmation" type="password" autocomplete="new-password" minlength="8" placeholder="Enter your password again" required>
+          <button class="search-button" type="submit">Create account <span aria-hidden="true">→</span></button>
+          <button class="auth-switch" type="button" data-auth-panel="login">Already have an account? Log in</button>
+        </form>
+      </section>
+      <p class="auth-notice">Demo only: account services aren’t connected. Your credentials won’t be sent, saved or shared.</p>
+      <p class="auth-status" id="auth-status" role="status" aria-live="polite"></p>
+    </dialog>
+    <main>
+      <div class="page-intro"><p class="section-kicker">Plan your island escape</p><h1>Travel packages</h1></div>
+      <form class="search-card" id="trip-search">
+        <div class="search-field">
+          <label for="destination">I’m dreaming of</label>
+          <select id="destination" name="destination">
+            <option value="all">Everywhere in Sri Lanka</option>
+            <option value="coast">The sunny south coast</option>
+            <option value="hill">Misty hill country</option>
+            <option value="culture">Ancient culture</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="travel-date">Thinking of going</label>
+          <input id="travel-date" name="date" type="date" aria-label="Preferred travel date">
+        </div>
+        <div class="search-field">
+          <label for="travellers">Travelling with</label>
+          <select id="travellers" name="travellers">
+            <option value="2">2 travellers</option>
+            <option value="1">Just me</option>
+            <option value="3">3 travellers</option>
+            <option value="4">4 travellers</option>
+            <option value="5">5+ travellers</option>
+          </select>
+        </div>
+        <button class="search-button" type="submit">Find my trip <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="search-feedback" id="search-feedback" role="status" aria-live="polite"></p>
+
+      <section class="section" id="packages" aria-labelledby="destinations-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">A whole world in one island</p>
+            <h2 id="destinations-title">Find a trip that feels like you.</h2>
+          </div>
+          <p class="section-subtitle">Four handpicked ways to see the island. Each package can be tailored to your pace.</p>
+        </div>
+        <div class="destination-grid" id="destination-grid">
+          <article class="destination-card" data-category="culture">
+            <div class="destination-image" role="img" aria-label="Tropical scenery with palms and a waterway in Sri Lanka" style="background-image:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=85')">
+              <span class="destination-tag">4 days · 3 nights</span>
+              <div class="destination-meta"><span>01 / 04</span><span>↗ Kandy &amp; Nuwara Eliya</span></div>
+            </div>
+            <div class="destination-body"><div><h3>Kandy &amp; Nuwara Eliya Escape</h3><p>Temple visits, tea country &amp; a scenic train</p></div><a class="arrow-link" href="contact.html" aria-label="Ask about the Kandy and Nuwara Eliya Escape">↗</a></div>
+            <div class="package-details"><p>Explore Kandy’s heritage before unwinding among cool-climate tea estates.</p><p class="package-highlights"><strong>Includes:</strong> Temple of the Tooth, tea factory visit, hill-country train ride.</p><p class="package-price">From LKR 85,000 <span>/ person</span></p></div>
+          </article>
+          <article class="destination-card" data-category="coast">
+            <div class="destination-image" role="img" aria-label="Ocean waves along a tropical coast" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=85')">
+              <span class="destination-tag">5 days · 4 nights</span>
+              <div class="destination-meta"><span>02 / 04</span><span>↗ Galle &amp; Mirissa</span></div>
+            </div>
+            <div class="destination-body"><div><h3>Southern Coast Adventure</h3><p>Sea breezes, old forts &amp; beach time</p></div><a class="arrow-link" href="contact.html" aria-label="Ask about the Southern Coast Adventure">↗</a></div>
+            <div class="package-details"><p>Follow the coast for relaxed beach days, ocean views and a taste of Galle’s history.</p><p class="package-highlights"><strong>Includes:</strong> Galle Fort walk, beach stops, optional whale-watching trip.</p><p class="package-price">From LKR 98,000 <span>/ person</span></p></div>
+          </article>
+          <article class="destination-card" data-category="culture">
+            <div class="destination-image" role="img" aria-label="Colourful traditional cultural art" style="background-image:url('https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=800&q=85')">
+              <span class="destination-tag">3 days · 2 nights</span>
+              <div class="destination-meta"><span>03 / 04</span><span>↗ Sigiriya &amp; Dambulla</span></div>
+            </div>
+            <div class="destination-body"><div><h3>Sigiriya &amp; Cultural Triangle</h3><p>Ancient sites, art &amp; village life</p></div><a class="arrow-link" href="contact.html" aria-label="Ask about the Sigiriya and Cultural Triangle Tour">↗</a></div>
+            <div class="package-details"><p>Discover Sri Lanka’s ancient heart, with time for local flavours and unhurried exploring.</p><p class="package-highlights"><strong>Includes:</strong> Sigiriya Rock Fortress, Dambulla cave temples, village visit.</p><p class="package-price">From LKR 72,000 <span>/ person</span></p></div>
+          </article>
+          <article class="destination-card" data-category="hill">
+            <div class="destination-image" role="img" aria-label="Misty green hills and a winding path" style="background-image:url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=85')">
+              <span class="destination-tag">4 days · 3 nights</span>
+              <div class="destination-meta"><span>04 / 04</span><span>↗ Ella &amp; the highlands</span></div>
+            </div>
+            <div class="destination-body"><div><h3>Ella &amp; Hill Country Adventure</h3><p>Waterfalls, mountain paths &amp; tea</p></div><a class="arrow-link" href="contact.html" aria-label="Ask about the Ella and Hill Country Adventure">↗</a></div>
+            <div class="package-details"><p>Take the scenic route to Ella for easy-going hikes, waterfall views and fresh mountain air.</p><p class="package-highlights"><strong>Includes:</strong> Nine Arch Bridge, Little Adam’s Peak, tea-country train ride.</p><p class="package-price">From LKR 89,000 <span>/ person</span></p></div>
+          </article>
+        </div>
+        <p class="price-note">Guide prices are illustrative per-person estimates in LKR. Final pricing depends on dates, group size and selected services.</p>
+      </section>
+    </main>
+    <footer>
+      <div class="site-footer">
+        <div>
+          <a class="brand" href="index.html" aria-label="Lanka Travellers home">
+            <span class="brand-mark" aria-hidden="true">L</span>
+            <span class="brand-name">Lanka Travellers<span>Made of island stories</span></span>
+          </a>
+          <p class="footer-note">Small island. Big feeling. Made with love in Sri Lanka.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="travel-packages.html" aria-current="page">Travel packages</a>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Get in touch</a>
+          <a href="mailto:hello@lankatravellers.com">Email us</a>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Lanka Travellers</span><span>Ayubowan — may you live long.</span></div>
+    </footer>
+  </div>
+</body>
+</html>
